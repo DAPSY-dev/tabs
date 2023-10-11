@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+
+    <title>Tabs</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      html {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 1.5;
+      }
+    </style>
+    <link rel="stylesheet" href="./tabs.css">
+
+    <script>
+      document.documentElement.classList.remove('no-js');
+    </script>
+    <script src="./tabs.js" defer></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const tabElements = [...document.querySelectorAll('.js-tabs')];
+        for (const tabElement of tabElements) {
+          const options = {
+            // onTabChange: (instance) => {
+            //   console.log('instance', instance);
+            // },
+          };
+          new Tabs(tabElement, options);
+        }
+      });
+    </script>
+
+  </head>
+  <body>
+
+    <div style="margin: 0 auto; max-width: 640px;">
+
+      <!--
+        If you don't have a heading for the tabs remove "aria-labelledby" from ".js-tabs-nav".
+        Else the heading "id" === ".js-tabs-nav" "aria-labelledby"
+        ---
+        If ".js-tabs-button" has "id" or "aria-controls"
+        or
+        "[data-tab-panel]" has "id" or "aria-labelledby"
+        the plugin will NOT generate them
+        and you need to make sure that they are properly set.
+        ---
+        The ".js-tabs-button" "id" === "[data-tab-panel]" "aria-labelledby"
+        and
+        the ".js-tabs-button" "aria-controls" === "[data-tab-panel]" "id".
+        ---
+        ".js-tabs-button" can have class "is-active" to set the active tab.
+        ---
+        "[data-tab-panel]" can have class "is-initial-tab" to prevent CLS (Cumulative Layout Shift).
+      -->
+      <div class="tabs js-tabs" data-id="tabs01">
+
+        <h3 id="tablist-1">Tabs h3</h3>
+
+        <div class="tabs__nav js-tabs-nav" aria-labelledby="tablist-1">
+          <button type="button" class="tabs__button js-tabs-button is-active" data-tab-controls="tab-1">
+            Tabs 1
+          </button>
+          <button type="button" class="tabs__button js-tabs-button" data-tab-controls="tab-2">
+            Tabs 2
+          </button>
+          <button type="button" class="tabs__button js-tabs-button" data-tab-controls="tab-3">
+            Tabs 3
+          </button>
+          <button type="button" class="tabs__button js-tabs-button" data-tab-controls="tab-4">
+            Tabs 4
+          </button>
+        </div>
+
+        <div class="tabs__panel is-initial-tab" data-tab-panel="tab-1">
+          <p style="margin: 0;">
+            <a href="#">Tabs 1</a>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Culpa consequuntur recusandae fugit temporibus excepturi debitis,
+            quibusdam natus voluptates qui id commodi ullam voluptatibus sapiente ab suscipit,
+            inventore repudiandae totam dignissimos labore sit ipsum aspernatur!
+            Illo, perferendis. Ab dolorem ut ipsum. Culpa tempore quos libero esse rem repudiandae,
+            praesentium excepturi non.
+          </p>
+        </div>
+
+        <div class="tabs__panel" data-tab-panel="tab-2">
+          <p style="margin: 0;">
+            <a href="#">Tabs 2</a>
+            Omnis commodi ducimus,
+            laboriosam ipsum quaerat itaque repellat laborum unde cupiditate dolores pariatur magni quae aperiam.
+            Itaque sit, iste officia quod, ex deleniti omnis totam sint mollitia,
+            quos possimus veniam corporis quo nesciunt minima nisi!
+            Eveniet ducimus quam dolores,
+            quis explicabo delectus repellendus ut doloribus veritatis quaerat architecto molestiae sapiente.
+          </p>
+        </div>
+
+        <div class="tabs__panel" data-tab-panel="tab-3">
+          <p style="margin: 0;">
+            <a href="#">Tabs 3</a>
+            Mollitia quod exercitationem corporis suscipit,
+            ullam eligendi rerum temporibus itaque iste repellendus,
+            fugiat nostrum natus quas, totam eveniet aperiam reprehenderit!
+            Deleniti, ipsum veritatis asperiores dicta tempora earum pariatur ratione possimus minima illo itaque?
+            Sapiente maxime ipsum perferendis obcaecati.
+            Dolorum pariatur animi aperiam nisi praesentium doloribus alias assumenda error amet excepturi?
+          </p>
+        </div>
+
+        <div class="tabs__panel" data-tab-panel="tab-4">
+          <p style="margin: 0;">
+            <a href="#">Tabs 4</a>
+            Sunt, magnam laboriosam sequi tenetur error ea expedita officia maiores asperiores consequuntur,
+            nesciunt numquam maxime.
+            Perferendis,
+            distinctio dolore praesentium asperiores nihil sapiente quae obcaecati perspiciatis itaque corrupti omnis,
+            velit eos nulla necessitatibus pariatur porro quis totam culpa. Quas est vitae id voluptatem.
+            Dolorum omnis accusantium impedit earum explicabo id nulla?
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
